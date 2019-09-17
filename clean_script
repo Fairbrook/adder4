@@ -1,0 +1,4 @@
+#! /bin/bash
+rm -f *.vbe *.vst *.ap salida_*.pat *.x* *.lax *.al
+ls
+

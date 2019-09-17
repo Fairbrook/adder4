@@ -1,0 +1,16 @@
+#! /bin/bash
+vasy -a -p -o -I vhdl adder4 adder4 &&
+asimut -b adder4 adder4 salida_vbe &&
+boom -A -V -l 3 -d 0 -i 100 -s adder4 adder4_opt &&
+boog -m 0 adder4_opt adder4 &&
+loon -m 0 adder4 adder4_opt &&
+asimut adder4 adder4 salida_vst &&
+ocp -margin 0.33 -eqmargin -ioc adder4 adder4_opt adder4_p &&
+nero -V -2 -L -p adder4_p adder4_opt adder4_f &&
+export MBK_OUT_LO=al &&
+cougar -v adder4_f adder4 &&
+export MBK_OUT_LO=vst &&
+lvx vst al adder4_opt adder4 &&
+graal -l adder4_f &&
+exit 0
+
